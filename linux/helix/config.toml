@@ -1,0 +1,50 @@
+theme = "ayu_evolve"
+# theme = "hex_lavender"
+
+[editor]
+true-color = true
+line-number = "relative"
+bufferline = "multiple"   # show the name of buffer only if more than one is open
+color-modes = true
+cursorline = true
+
+[keys.insert]
+j = { k = "normal_mode"}
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+
+[editor.lsp]
+display-messages = true
+
+[editor.whitespace.render]
+newline = "all"
+space = "none"
+tab = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+
+[editor.indent-guides]
+render = true
+character = "╎"     # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+
+
+[editor.statusline]
+left = ["mode", "spinner", "workspace-diagnostics"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
