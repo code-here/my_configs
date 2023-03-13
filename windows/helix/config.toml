@@ -1,0 +1,21 @@
+# theme = "hex_lavender"
+theme = "ayu_dark"
+
+[keys.insert]
+j = { k = "normal_mode"}
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor]
+line-number = "relative"
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
