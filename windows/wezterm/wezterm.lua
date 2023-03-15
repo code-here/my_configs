@@ -4,6 +4,8 @@ return {
   default_prog = { "cmd.exe" },
 
   font = wezterm.font_with_fallback({
+    {family = 'MonoLisa', weight = 'Medium'},
+    'Dank Mono',
     'JetBrainsMono NF',
     'Cascadia Code',
     'Cartograph CF',
@@ -30,8 +32,6 @@ return {
   		-- the window is not focused
   		inactive_titlebar_bg = "#333333",
 
-  		-- The color of the inactive tab bar edge/divider
-  		inactive_tab_edge = "#575757",
   	},
   keys = {
     {
