@@ -1,8 +1,9 @@
 local wezterm = require 'wezterm'
 
 return {
-  default_prog = { "cmd.exe" },
+  -- default_prog = { "cmd.exe" },
 
+  default_prog = { "nu.exe" },
   font = wezterm.font_with_fallback({
     {family = 'MonoLisa', weight = 'Medium'},
     'Dank Mono',

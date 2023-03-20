@@ -1,5 +1,5 @@
 # theme = "hex_lavender"
-theme = "ayu_dark"
+theme = "catppuccin_mocha"
 
 [keys.insert]
 j = { k = "normal_mode"}
