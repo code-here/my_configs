@@ -60,7 +60,7 @@ return utils.merge({
     'JetBrains Mono',
     'FiraCode Nerd Font Mono',
   }),
-  font_size = 13,
+  font_size = 15,
   max_fps = 120,
   pane_focus_follows_mouse = false,
   warn_about_missing_glyphs = false,
