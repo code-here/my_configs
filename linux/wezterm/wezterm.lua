@@ -32,15 +32,15 @@ end)
 
 local os_config = {}
 
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' or wezterm.target_triple == 'x86_64-pc-windows-gnu' then
 
   local wsl_domains = wezterm.default_wsl_domains()
   for _, dom in ipairs(wsl_domains) do
-    dom.default_cwd = "/home/max"
+    dom.default_cwd = "/home/dark"
   end
   os_config = {
     wsl_domains = wsl_domains,
-    default_domain = "WSL:Debian",
+    default_domain = "WSL:Ubuntu",
   }
 else
   os_config = {
