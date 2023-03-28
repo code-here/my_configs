@@ -57,8 +57,8 @@ end
 return utils.merge({
   -- default_prog = { "nu" },
   font = wezterm.font_with_fallback({
-    'MesloLGS Nerd Font',
     'JetBrains Mono',
+    'FiraCode Nerd Font Mono',
   }),
   font_size = 13,
   max_fps = 120,
