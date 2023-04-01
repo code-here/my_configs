@@ -1,5 +1,5 @@
-theme = "kanagawa"
-# theme = "ayu_evolve"
+# theme = "kanagawa"
+theme = "ayu_evolve"
 # theme = "hex_lavender"
 
 [editor]
@@ -17,6 +17,8 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.soft-wrap]
+enable = true
 
 [editor.lsp]
 display-messages = true
@@ -46,7 +48,7 @@ skip-levels = 1
 [editor.statusline]
 left = ["mode", "spinner", "workspace-diagnostics"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+right = ["version-control", "diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
