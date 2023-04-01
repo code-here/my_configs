@@ -1,5 +1,5 @@
 # theme = "hex_lavender"
-theme = "catppuccin_mocha"
+theme = "ayu_evolve"
 
 [keys.insert]
 j = { k = "normal_mode"}
@@ -14,8 +14,38 @@ line-number = "relative"
 cursorline = true
 bufferline = "multiple"
 color-modes = true
+true-color = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.whitespace.render]
+newline = "all"
+space = "none"
+tab = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
 
 [editor.indent-guides]
 render = true
 character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "workspace-diagnostics"]
+center = ["file-name"]
+right = ["version-control", "diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
