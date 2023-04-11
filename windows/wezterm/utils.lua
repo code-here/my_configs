@@ -31,75 +31,75 @@ end
 
 M.get_process = function(tab)
   local process_icons = {
-    ["docker"] = {
+    ["docker.exe"] = {
       { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.linux_docker },
     },
-    ["docker-compose"] = {
+    ["docker-compose.exe"] = {
       { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.linux_docker },
     },
-    ["nvim"] = {
+    ["nvim.exe"] = {
       { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.custom_vim },
     },
-    ["v"] = {
+    ["v.exe"] = {
       { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.custom_vim },
     },
-    ["vim"] = {
+    ["vim.exe"] = {
       { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.dev_vim },
     },
-    ["node"] = {
+    ["node.exe"] = {
       { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.mdi_hexagon },
     },
-    ["zsh"] = {
+    ["zsh.exe"] = {
       { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_terminal },
     },
-    ["bash"] = {
+    ["bash.exe"] = {
       { Foreground = { Color = colors.subtext0 } },
       { Text = wezterm.nerdfonts.cod_terminal_bash },
     },
-    ["htop"] = {
+    ["htop.exe"] = {
       { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_chart_donut_variant },
     },
-    ["cargo"] = {
+    ["cargo.exe"] = {
       { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_rust },
     },
-    ["go"] = {
+    ["go.exe"] = {
       { Foreground = { Color = colors.sapphire } },
       { Text = wezterm.nerdfonts.mdi_language_go },
     },
-    ["lazydocker"] = {
+    ["lazydocker.exe"] = {
       { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.linux_docker },
     },
-    ["git"] = {
+    ["git.exe"] = {
       { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_git },
     },
-    ["lazygit"] = {
+    ["lazygit.exe"] = {
       { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_git },
     },
-    ["lua"] = {
+    ["lua.exe"] = {
       { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.seti_lua },
     },
-    ["wget"] = {
+    ["wget.exe"] = {
       { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_arrow_down_box },
     },
-    ["curl"] = {
+    ["curl.exe"] = {
       { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_flattr },
     },
-    ["gh"] = {
+    ["gh.exe"] = {
       { Foreground = { Color = colors.mauve } },
       { Text = wezterm.nerdfonts.dev_github_badge },
     },
@@ -109,7 +109,7 @@ M.get_process = function(tab)
 
   return wezterm.format(
     process_icons[process_name]
-    or { { Foreground = { Color = colors.sky } }, { Text = string.format("%s", process_name) } }
+    or { { Foreground = { Color = colors.lavender} }, { Text = string.format("%s", process_name) } }
   )
 end
 

@@ -7,18 +7,18 @@ local function get_current_working_dir(tab)
   local current_dir = tab.active_pane.current_working_dir
   local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
 
-  return current_dir == HOME_DIR and "  ~"
-      or string.format(" %s", string.gsub(current_dir, "(.*[/\\])(.*)", "%2"))
+  return current_dir == HOME_DIR and "~"
+      or string.format("%s", string.gsub(current_dir, "(.*[/\\])(.*)", "%2"))
 end
 
 wezterm.on("format-tab-title", function(tab)
   return wezterm.format({
     { Attribute = { Intensity = "Half" } },
-    { Text = tab.is_active and " [" or "  " },
+    { Text = tab.is_active and "{ " or "  " },
     { Text = utils.get_process(tab) },
-    { Text = "  " },
+    { Text = " ⸽ " },
     { Text = get_current_working_dir(tab) },
-    { Text = tab.is_active and "] " or "  " },
+    { Text = tab.is_active and " }" or "  " },
     { Foreground = { Color = colors.base } },
   })
 end)
@@ -30,34 +30,21 @@ wezterm.on("update-status", function(window)
   }))
 end)
 
-local os_config = {}
-
--- if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-
---   local wsl_domains = wezterm.default_wsl_domains()
---   for _, dom in ipairs(wsl_domains) do
---     dom.default_cwd = "/home/max"
---   end
---   os_config = {
---     wsl_domains = wsl_domains,
---     default_domain = "WSL:Debian",
---   }
--- else
---   os_config = {
---     window_padding = {
---       left = 20,
---       right = 20,
---       top = 20,
---       bottom = 20,
---     },
---   }
--- end
-
-
-return utils.merge({
+return {
   -- default_prog = { "cmd.exe" },
 
   default_prog = { "nu.exe" },
+  -- front_end = "WebGpu",
+  -- webgpu_power_preference = "HighPerformance",
+  -- webgpu_preferred_adapter = {
+  --       backend = 'Vulkan',
+  --       device = 7309,
+  --       device_type = 'DiscreteGpu',
+  --       driver = 'NVIDIA',
+  --       driver_info = '531.41',
+  --       name = 'NVIDIA GeForce GTX 1050',
+  --       vendor = 4318,
+  --   },
   font = wezterm.font_with_fallback({
     {family = 'MonoLisa', weight = 'Medium'},
     'Dank Mono',
@@ -88,9 +75,10 @@ return utils.merge({
   enable_scroll_bar = false,
   use_fancy_tab_bar = false,
   show_new_tab_button_in_tab_bar = false,
-  window_background_opacity = 0.6,
-  tab_max_width = 50,
+  window_background_opacity = 0.8,
+  tab_max_width = 100,
   hide_tab_bar_if_only_one_tab = true,
+  tab_bar_at_bottom = true,
   disable_default_key_bindings = false,
   colors = {
     split = colors.surface0,
@@ -141,6 +129,7 @@ return utils.merge({
       inactive_tab = {
         bg_color = colors.crust,
         fg_color = colors.surface2,
+        italic = true,
       },
       inactive_tab_hover = {
         bg_color = colors.mantle,
@@ -156,8 +145,8 @@ return utils.merge({
       },
     },
   },
-  color_scheme = "3024 Night",
-  leader = { key = "p", mods = "CTRL" },
+  color_scheme = "Kanagawa (Gogh)",
+  leader = { key = "a", mods = "CTRL" },
   keys = {
     -- Keybindings similar to tmux
     { key = "-", mods = "LEADER", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
@@ -183,12 +172,12 @@ return utils.merge({
     { key = 'P', mods = 'CMD|SHIFT', action = wezterm.action.ActivateCommandPalette, },
     { key = 'U', mods = 'CMD|SHIFT', action = wezterm.action.Nop, },
     { key = 'F11', mods = '', action = wezterm.action.ToggleFullScreen, },
-    {
-      key = 'C',
-      mods = 'CTRL',
-      action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
-    },
-    { key = 'V', mods = 'CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
+    -- {
+    --   key = 'C',
+    --   mods = 'CTRL',
+    --   action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
+    -- },
+    -- { key = 'V', mods = 'CTRL', action = wezterm.action.PasteFrom 'Clipboard' },
   },
   hyperlink_rules = {
     {
@@ -216,4 +205,4 @@ return utils.merge({
       format = "https://example.com/tasks/?t=$1",
     },
   },
-}, os_config)
+}
