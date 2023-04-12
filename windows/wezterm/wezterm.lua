@@ -23,10 +23,10 @@ wezterm.on("format-tab-title", function(tab)
   })
 end)
 
-wezterm.on("update-status", function(window)
+wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(wezterm.format({
     { Attribute = { Intensity = "Bold" } },
-    { Text = wezterm.strftime("%H:%M ") },
+    { Text = wezterm.strftime("%d/%m/%Y %H:%M ") },
   }))
 end)
 
