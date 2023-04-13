@@ -16,7 +16,7 @@ wezterm.on("format-tab-title", function(tab)
     { Attribute = { Intensity = "Half" } },
     { Text = tab.is_active and "{ " or "  " },
     { Text = utils.get_process(tab) },
-    { Text = " ⸽ " },
+    { Text = " " },
     { Text = get_current_working_dir(tab) },
     { Text = tab.is_active and " }" or "  " },
     { Foreground = { Color = colors.base } },
@@ -31,8 +31,6 @@ wezterm.on('update-right-status', function(window, pane)
 end)
 
 return {
-  -- default_prog = { "cmd.exe" },
-
   default_prog = { "nu.exe" },
   -- front_end = "WebGpu",
   -- webgpu_power_preference = "HighPerformance",
@@ -145,7 +143,9 @@ return {
       },
     },
   },
-  color_scheme = "Kanagawa (Gogh)",
+  -- color_scheme = "Kanagawa (Gogh)",
+  use_dead_keys = false,
+  scrollback_lines = 5000,
   leader = { key = "a", mods = "CTRL" },
   keys = {
     -- Keybindings similar to tmux
