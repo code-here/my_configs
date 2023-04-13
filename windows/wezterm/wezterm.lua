@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
 local utils = require("utils")
 local colors = require("colors")
 
@@ -28,6 +29,11 @@ wezterm.on('update-right-status', function(window, pane)
     { Attribute = { Intensity = "Bold" } },
     { Text = wezterm.strftime("%d/%m/%Y %H:%M ") },
   }))
+end)
+
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  window:gui_window():maximize()
 end)
 
 return {
