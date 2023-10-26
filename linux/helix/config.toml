@@ -47,8 +47,8 @@ skip-levels = 1
 
 [editor.statusline]
 left = ["mode", "spinner", "workspace-diagnostics"]
-center = ["file-name"]
-right = ["version-control", "diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+center = ["read-only-indicator", "file-name", "file-modification-indicator"]
+right = ["version-control", "diagnostics", "selections", "register" ,"position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
