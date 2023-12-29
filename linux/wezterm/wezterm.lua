@@ -69,12 +69,15 @@ end
 return utils.merge({
   -- default_prog = { "nu" },
   font = wezterm.font_with_fallback({
-    'JetBrains Mono',
+    'JetBrainsMono Nerd Font',
+    'CaskaydiaCove Nerd Font',
+    'Iosevka Nerd Font',
+    'VictorMono Nerd Font',
     'FiraCode Nerd Font Mono',
   }),
   front_end = 'WebGpu',
   webgpu_power_preference = "HighPerformance",
-  font_size = 14,
+  font_size = 12,
   max_fps = 120,
   initial_rows = 45,
   initial_cols = 208,
@@ -171,7 +174,7 @@ return utils.merge({
     },
   },
   color_scheme = "3024 Night",
-  leader = { key = "p", mods = "CTRL" },
+  leader = { key = "a", mods = "CTRL" },
   keys = {
     -- Keybindings similar to tmux
     { key = "-",   mods = "LEADER",    action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },

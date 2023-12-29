@@ -2,3 +2,10 @@
 [language-server.rust-analyzer.config]
 inlayHints.bindingModeHints.enable = true
 checkOnSave = true
+
+[language-server.clangd]
+command = "clangd"
+args = ["--compile-commands-dir=compile_commands_directory"]
+
+
+
