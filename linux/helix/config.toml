@@ -1,5 +1,6 @@
+theme = "gruvbox_dark_hard"
 # theme = "kanagawa"
-theme = "ayu_evolve"
+# theme = "ayu_evolve"
 # theme = "hex_lavender"
 
 [editor]
