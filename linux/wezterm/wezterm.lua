@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 -- local mux = wezterm.mux
 local utils = require("utils")
-local colors = require("colors")
+-- local colors = require("colors")
 
 -- wezterm.on('gui-startup', function(cmd)
 --   local tab, pane, window = mux.spawn_window(cmd or {})
@@ -32,7 +32,7 @@ wezterm.on("format-tab-title", function(tab)
     { Text = "  " },
     { Text = get_current_working_dir(tab) },
     { Text = tab.is_active and "] " or "  " },
-    { Foreground = { Color = colors.base } },
+    -- { Foreground = { Color = colors.base } },
   })
 end)
 
@@ -69,6 +69,7 @@ end
 return utils.merge({
   -- default_prog = { "nu" },
   font = wezterm.font_with_fallback({
+    'Liga SFMono Nerd Font',
     'pragmasevka Nerd Font',
     'PragmataPro for Powerline',
     'Monolisa',
@@ -84,7 +85,7 @@ return utils.merge({
   use_cap_height_to_scale_fallback_fonts = true,
   front_end = 'WebGpu',
   webgpu_power_preference = "HighPerformance",
-  font_size = 13,
+  -- font_size = 13,
   -- cell_width = 1.0,
   max_fps = 120,
   initial_rows = 45,
@@ -117,71 +118,11 @@ return utils.merge({
   tab_max_width = 50,
   hide_tab_bar_if_only_one_tab = true,
   disable_default_key_bindings = false,
-  colors = {
-    split = colors.surface0,
-    foreground = colors.text,
-    background = colors.base,
-    cursor_bg = colors.rosewater,
-    cursor_border = colors.rosewater,
-    cursor_fg = colors.base,
-    selection_bg = colors.surface2,
-    selection_fg = colors.text,
-    visual_bell = colors.surface0,
-    indexed = {
-      [16] = colors.peach,
-      [17] = colors.rosewater,
-    },
-    scrollbar_thumb = colors.surface2,
-    compose_cursor = colors.flamingo,
-    ansi = {
-      colors.surface1,
-      colors.red,
-      colors.green,
-      colors.yellow,
-      colors.blue,
-      colors.pink,
-      colors.teal,
-      colors.subtext0,
-    },
-    brights = {
-      colors.subtext0,
-      colors.red,
-      colors.green,
-      colors.yellow,
-      colors.blue,
-      colors.pink,
-      colors.teal,
-      colors.surface1,
-    },
-    tab_bar = {
-      background = colors.crust,
-      active_tab = {
-        bg_color = "none",
-        fg_color = colors.subtext1,
-        intensity = "Bold",
-        underline = "None",
-        italic = false,
-        strikethrough = false,
-      },
-      inactive_tab = {
-        bg_color = colors.crust,
-        fg_color = colors.surface2,
-      },
-      inactive_tab_hover = {
-        bg_color = colors.mantle,
-        fg_color = colors.subtext0,
-      },
-      new_tab = {
-        bg_color = colors.crust,
-        fg_color = colors.subtext0,
-      },
-      new_tab_hover = {
-        bg_color = colors.crust,
-        fg_color = colors.subtext0,
-      },
-    },
-  },
-  color_scheme = "3024 Night",
+  -- color_scheme = "Oxo carbon",
+  color_scheme = "Gruvbox dark, hard (base16)",
+  -- color_scheme = "ForestBlue",
+  -- color_scheme = "rose-pine",
+  -- color_scheme = "Everforest Dark (Gogh)",
   leader = { key = "a", mods = "CTRL" },
   keys = {
     -- Keybindings similar to tmux
