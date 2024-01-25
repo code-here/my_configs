@@ -1,7 +1,6 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 local utils = require("utils")
-local colors = require("colors")
 
 
 local function get_current_working_dir(tab)
@@ -20,7 +19,6 @@ wezterm.on("format-tab-title", function(tab)
     { Text = " " },
     { Text = get_current_working_dir(tab) },
     { Text = tab.is_active and " }" or "  " },
-    { Foreground = { Color = colors.base } },
   })
 end)
 
@@ -32,38 +30,39 @@ wezterm.on('update-right-status', function(window, pane)
 end)
 
 wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():maximize()
+  -- local tab, pane, window = mux.spawn_window(cmd or {})
+  -- window:gui_window():maximize()
 end)
 
 return {
   default_prog = { "nu.exe" },
-  -- front_end = "WebGpu",
-  -- webgpu_power_preference = "HighPerformance",
-  -- webgpu_preferred_adapter = {
-  --       backend = 'Vulkan',
-  --       device = 7309,
-  --       device_type = 'DiscreteGpu',
-  --       driver = 'NVIDIA',
-  --       driver_info = '531.41',
-  --       name = 'NVIDIA GeForce GTX 1050',
-  --       vendor = 4318,
-  --   },
+  front_end = "WebGpu",
+  webgpu_power_preference = "HighPerformance",
+  webgpu_preferred_adapter = {
+        backend = 'Vulkan',
+        device = 7309,
+        device_type = 'DiscreteGpu',
+        driver = 'NVIDIA',
+        driver_info = '551.23',
+        name = 'NVIDIA GeForce GTX 1050',
+        vendor = 4318,
+    },
   font = wezterm.font_with_fallback({
-    'Berkeley Mono',
-    {family = 'MonoLisa', weight = 'Medium'},
+    'Monaspace Neon Var',
+    'Pragmasevka Nerd Font',
+    -- {family = 'MonoLisa', weight = 'Medium'},
     'Dank Mono',
     'JetBrainsMono NF',
     'Cascadia Code',
     'Cartograph CF',
   }),
-  font_size = 14,
+  harfbuzz_features = {'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'zero'},
+  font_size = 12,
   max_fps = 120,
   pane_focus_follows_mouse = false,
   warn_about_missing_glyphs = false,
   show_update_window = true,
   check_for_updates = true,
-  line_height = 1.30,
   window_decorations = "RESIZE",
   window_close_confirmation = "AlwaysPrompt",
   audible_bell = "Disabled",
@@ -80,79 +79,14 @@ return {
   enable_scroll_bar = false,
   use_fancy_tab_bar = false,
   show_new_tab_button_in_tab_bar = false,
-  window_background_opacity = 0.8,
+  window_background_opacity = 0.7,
   tab_max_width = 100,
   hide_tab_bar_if_only_one_tab = true,
   tab_bar_at_bottom = true,
   disable_default_key_bindings = false,
-  colors = {
-    split = colors.surface0,
-    foreground = colors.text,
-    background = colors.base,
-    cursor_bg = colors.rosewater,
-    cursor_border = colors.rosewater,
-    cursor_fg = colors.base,
-    selection_bg = colors.surface2,
-    selection_fg = colors.text,
-    visual_bell = colors.surface0,
-    indexed = {
-      [16] = colors.peach,
-      [17] = colors.rosewater,
-    },
-    scrollbar_thumb = colors.surface2,
-    compose_cursor = colors.flamingo,
-    ansi = {
-      colors.surface1,
-      colors.red,
-      colors.green,
-      colors.yellow,
-      colors.blue,
-      colors.pink,
-      colors.teal,
-      colors.subtext0,
-    },
-    brights = {
-      colors.subtext0,
-      colors.red,
-      colors.green,
-      colors.yellow,
-      colors.blue,
-      colors.pink,
-      colors.teal,
-      colors.surface1,
-    },
-    tab_bar = {
-      background = colors.crust,
-      active_tab = {
-        bg_color = "none",
-        fg_color = colors.subtext1,
-        intensity = "Bold",
-        underline = "None",
-        italic = false,
-        strikethrough = false,
-      },
-      inactive_tab = {
-        bg_color = colors.crust,
-        fg_color = colors.surface2,
-        italic = true,
-      },
-      inactive_tab_hover = {
-        bg_color = colors.mantle,
-        fg_color = colors.subtext0,
-      },
-      new_tab = {
-        bg_color = colors.crust,
-        fg_color = colors.subtext0,
-      },
-      new_tab_hover = {
-        bg_color = colors.crust,
-        fg_color = colors.subtext0,
-      },
-    },
-  },
-  -- color_scheme = "Kanagawa (Gogh)",
+  color_scheme = "rose-pine",
   use_dead_keys = false,
-  scrollback_lines = 5000,
+  scrollback_lines = 10000,
   leader = { key = "a", mods = "CTRL" },
   keys = {
     -- Keybindings similar to tmux

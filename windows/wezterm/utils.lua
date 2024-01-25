@@ -1,5 +1,3 @@
-
-local colors = require("colors")
 local wezterm = require("wezterm")
 
 local M = {}
@@ -32,75 +30,75 @@ end
 M.get_process = function(tab)
   local process_icons = {
     ["docker.exe"] = {
-      { Foreground = { Color = colors.blue } },
+      -- { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.linux_docker },
     },
     ["docker-compose.exe"] = {
-      { Foreground = { Color = colors.blue } },
+      -- { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.linux_docker },
     },
     ["nvim.exe"] = {
-      { Foreground = { Color = colors.green } },
+      -- { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.custom_vim },
     },
     ["v.exe"] = {
-      { Foreground = { Color = colors.green } },
+      -- { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.custom_vim },
     },
     ["vim.exe"] = {
-      { Foreground = { Color = colors.green } },
+      -- { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.dev_vim },
     },
     ["node.exe"] = {
-      { Foreground = { Color = colors.green } },
+      -- { Foreground = { Color = colors.green } },
       { Text = wezterm.nerdfonts.mdi_hexagon },
     },
     ["zsh.exe"] = {
-      { Foreground = { Color = colors.peach } },
+      -- { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_terminal },
     },
     ["bash.exe"] = {
-      { Foreground = { Color = colors.subtext0 } },
+      -- { Foreground = { Color = colors.subtext0 } },
       { Text = wezterm.nerdfonts.cod_terminal_bash },
     },
     ["htop.exe"] = {
-      { Foreground = { Color = colors.yellow } },
+      -- { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_chart_donut_variant },
     },
     ["cargo.exe"] = {
-      { Foreground = { Color = colors.peach } },
+      -- { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_rust },
     },
     ["go.exe"] = {
-      { Foreground = { Color = colors.sapphire } },
+      -- { Foreground = { Color = colors.sapphire } },
       { Text = wezterm.nerdfonts.mdi_language_go },
     },
     ["lazydocker.exe"] = {
-      { Foreground = { Color = colors.blue } },
+      -- { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.linux_docker },
     },
     ["git.exe"] = {
-      { Foreground = { Color = colors.peach } },
+      -- { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_git },
     },
     ["lazygit.exe"] = {
-      { Foreground = { Color = colors.peach } },
+      -- { Foreground = { Color = colors.peach } },
       { Text = wezterm.nerdfonts.dev_git },
     },
     ["lua.exe"] = {
-      { Foreground = { Color = colors.blue } },
+      -- { Foreground = { Color = colors.blue } },
       { Text = wezterm.nerdfonts.seti_lua },
     },
     ["wget.exe"] = {
-      { Foreground = { Color = colors.yellow } },
+      -- { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_arrow_down_box },
     },
     ["curl.exe"] = {
-      { Foreground = { Color = colors.yellow } },
+      -- { Foreground = { Color = colors.yellow } },
       { Text = wezterm.nerdfonts.mdi_flattr },
     },
     ["gh.exe"] = {
-      { Foreground = { Color = colors.mauve } },
+      -- { Foreground = { Color = colors.mauve } },
       { Text = wezterm.nerdfonts.dev_github_badge },
     },
   }
@@ -109,7 +107,7 @@ M.get_process = function(tab)
 
   return wezterm.format(
     process_icons[process_name]
-    or { { Foreground = { Color = colors.lavender} }, { Text = string.format("%s", process_name) } }
+    or {  { Text = string.format("%s", process_name) } }
   )
 end
 
